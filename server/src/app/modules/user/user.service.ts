@@ -90,7 +90,7 @@ const createAdmin = async (req: Request): Promise<Admin> => {
 
     return result;
 };
-const getAllFromDB = async (params: any, options: IOptions) => {
+const getAllFromDB = async (params:any, options:IOptions) => {
     const { page, limit, skip, sortBy, sortOrder } = paginationHelper.calculatePagination(options)
     const { searchTerm, ...filterData } = params;
 
