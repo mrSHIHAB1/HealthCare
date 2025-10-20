@@ -8,6 +8,7 @@ export default {
     port: process.env.PORT,
     database_url: process.env.DATABASE_URL,
     openRouterApiKey:process.env.OPENROUTER_API_KEY,
+    stripeSecretKey:process.env.STRIPE_SECRET_KEY,
     cloudinary: {
         api_secret: process.env.CLOUDINARY_API_SECRET,
         cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
