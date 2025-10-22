@@ -68,8 +68,14 @@ const getAllFromDB = async (filters: any, options: IOptions) => {
                 include: {
                     specialities: true
                 }
+            },
+               reviews:{
+            select:{
+                rating:true,
             }
         }
+        },
+     
     });
 
     const total = await prisma.doctor.count({
@@ -155,7 +161,8 @@ const getAISuggestions = async (payload: { symptoms: string }) => {
                 include: {
                     specialities: true
                 }
-            }
+            },
+            reviews: true
         }
     });
 
