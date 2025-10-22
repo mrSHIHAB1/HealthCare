@@ -53,6 +53,8 @@ doctorSchedules   DoctorSchedules[]
     doctorSpecialties DoctorSpecialties[]
   appointments      Appointment[]
     prescriptions     Prescription[]
+        reviews           Review[]
+
     @@map("doctors")
 }
 
@@ -62,6 +64,10 @@ model Patient {
     name         String
     profilePhoto String?
     address      String?
+  patientHealthData PatientHealthData?
+    medicalReports    MedicalReport[]
+    reviews           Review[]
+
     isDeleted    Boolean  @default(false)
     createdAt    DateTime @default(now())
     updatedAt    DateTime @updatedAt
