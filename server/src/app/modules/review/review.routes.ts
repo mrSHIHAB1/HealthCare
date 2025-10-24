@@ -10,6 +10,11 @@ router.post(
     auth(UserRole.PATIENT),
     ReviewController.insertIntoDB
 );
+router.post(
+    '/',
+    auth(UserRole.PATIENT),
+    ReviewController.insertIntoDB
+);
 
 
 export const ReviewRoutes = router;
