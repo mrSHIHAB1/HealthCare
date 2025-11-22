@@ -36,7 +36,7 @@ export const loginUser = async (_currentState: any, formData: any): Promise<any>
         });
 
         const result = await res.json();
-
+         console.log(result)
         const setCookieHeaders = res.headers.getSetCookie();
 
         if (setCookieHeaders && setCookieHeaders.length > 0) {
@@ -91,6 +91,18 @@ export const loginUser = async (_currentState: any, formData: any): Promise<any>
             throw new Error(result.message || "Login failed");
         }
 
+        // if (redirectTo && result.data.needPasswordChange) {
+        //     const requestedPath = redirectTo.toString();
+        //     if (isValidRedirectForRole(requestedPath, userRole)) {
+        //         redirect(`/reset-password?redirect=${requestedPath}`);
+        //     } else {
+        //         redirect("/reset-password");
+        //     }
+        // }
+
+        // if (result.data.needPasswordChange) {
+        //     redirect("/reset-password");
+        // }
 
         if (redirectTo) {
             const requestedPath = redirectTo.toString();
